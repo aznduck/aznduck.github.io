@@ -4,28 +4,18 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-        <link href="/images/favicon.ico" rel="icon" type="image/x-icon">
-        <meta charset="utf-8">        
+        <link href="/img/favicon.ico" rel="icon" type="image/x-icon">
+        <meta charset="utf-8">
         <meta name="description" content="This webpage showcases David Han's portfolio which includes selected works of his media, past experiences, and unique aesthetic">
         <title>David Han Portfolio</title>
         <style>
             body {
                 font-family: 'Poppins';
             }
-            .headshot img {
-                max-height: 300px;
-                width: auto;
-                background-color:#fff;
-                border: 10px ridge #C63D2F;
-                border-radius: 50%;
-                perspective: 500px;
-                transition: transform 0.2s ease-out;
-            }
-
 
 
             #intro {
-                width: 800px;
+                width: 600px;
                 display: flex;
                 flex-direction: row;
                 position: fixed;
@@ -34,6 +24,7 @@
                 transform: translate(-50%, -50%);
                 /* background-color: yellow; */
                 align-items: center;
+                justify-content: center;
             }
 
             #icons {
@@ -53,12 +44,6 @@
 
             #icons img:hover {
                 transform: scale(1.2, 1.2);
-            }
-
-            #currsong {
-                position: fixed;
-                top: 710px;
-                left: 1060px;
             }
 
             #introduction {
@@ -134,7 +119,7 @@
                 margin: 0 auto;
                 letter-spacing: .10em; /* Adjust as needed */
                 animation: 
-                    typing 2.5s steps(30, end),
+                    typing 1.5s steps(20, end),
                     blink-caret .75s step-end infinite;
             }
 
@@ -157,11 +142,9 @@
 
         <div id="homepage">
             <div id="intro">
-                <div data-tilt data-tilt-max="30" data-tilt-full-page-listening class="headshot">
-                    <img src="img/square david.png" alt="David Headshot">
-                </div>
+                <img src="img/duck.gif" alt="duckgif">
                 <div id="introduction">
-                    <h1>Hi! I'm David Han 👋</h1>
+                    <h1>Thank You! 🙏</h1>
                 </div>
             </div>
             <div id="icons">
@@ -169,9 +152,6 @@
                 <a href="https://linkedin.com/in/davidhanusc" target="_blank"><img src="img/linkedin (1).png" alt="linkedin"></a>
                 <a href="https://github.com/aznduck" target="_blank"><img src="img/githubwhite.png" alt="github"></a>
                 <a href="https://instagram.com/davidhan_33" target="_blank"><img src="img/instagram (1).png" alt="instagram"></a>
-            </div>
-            <div id="currsong">
-                <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/0hhNTyH6RJJGItHeSMCof3?utm_source=generator&theme=0" width="400" height="100" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
             </div>
             <div id="homebutton">
                 <a href="index.html"><img src="img/DH__1_-removebg-preview.png" alt="homebutton"></a>
@@ -186,18 +166,5 @@
             </div>
         </div>
 
-        <script src="https://code.jquery.com/jquery-3.3.1.min.js" 
-        integrity="sha384-tsQFqpEReu7ZLhBV2VZlAu7zcOV+rXbYlF2cqB8txI/8aZajjp4Bqd+V6D5IgvKT" 
-        crossorigin="anonymous">
-        </script>
-        <script type="text/javascript" src="vanilla.js"></script>
-        <script type="text/javascript">
-            VanillaTilt.init(document.querySelector(".headshot"), {
-                max: 250,
-                speed: 400,
-            });
-            
-            VanillaTilt.init(document.querySelectorAll(".headshot"));
-        </script>
     </body>
 </html>
