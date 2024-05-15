@@ -4,7 +4,7 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-        <link href="/images/favicon.ico" rel="icon" type="image/x-icon">
+        <link rel="icon" href="img/favicon.ico" type="image/x-icon">
         <meta charset="utf-8">
         <meta name="description" content="This webpage showcases David Han's portfolio which includes selected works of his media, past experiences, and unique aesthetic">
         <title>David Han Portfolio</title>
@@ -88,9 +88,6 @@
                 /* background-color: green; */
             }
 
-            #introduction h2 {
-                transform: translateY(-40px);
-            }
 
             #introduction {
                 color: white;
@@ -101,6 +98,21 @@
                 text-align: center;
                 margin: 20px auto; /* Center horizontally and add top and bottom margin */
                 /* background-color: red; */
+            }
+            #introductiontwo {
+                color: white;
+                margin: 20px;
+                font-size: 1.2em;
+                text-shadow: white 1px 0 10px;
+                width: 550px;
+                text-align: center;
+                height: 60px;
+                margin: 5px auto; /* Center horizontally and add top and bottom margin */
+                /* background-color: red; */
+            }
+
+            #introductiontwo h2{
+                transform: translateY(-30px);
             }
 
             #introduction h1 {
@@ -253,14 +265,19 @@
                 margin: 10px auto;
                 max-width: 1000px;
                 padding: 4px;
-                background: linear-gradient(to right, #C63D2F, #FF9B50);
-                box-shadow: 0 0 8px rgba(0, 0, 0, 0.6);  
+                background: linear-gradient(to right, #C63D2F, #FF9B50); 
                 display: flex;            
                 justify-content: center;  
                 border-radius: 8px;    
             }
 
-            
+            #ttvideowrap img{
+               width: 100%;
+               height: auto;
+               display: block;
+               opacity: 0.9;
+               transition: opacity 0.3s ease;
+            }
 
         </style>
     </head>
@@ -294,10 +311,11 @@
                 <div class="my-card"><p>Put out gaming montages and other content such as a college decision video!
                     </p><img src="img/decisions23.png"></div>
             </div>
-            <div id="introduction"><h2>&darr;</h2></div>
-            <div id="introduction"><h2>Selected Works</h2></div>
-            <div id="ttvideowrap"><video width="1000" height="562.5" muted controls id="ttvideo"><source src="img/ttvideo.mp4" type="video/mp4"></video></div>
-            <div id="ttvideowrap"><video width="1000" height="562.5" muted controls id="ttvideo"><source src="img/HYPE FINAL.mp4" type="video/mp4"></video></div>
+            <div id="introductiontwo"><h2>&darr;</h2></div>
+            <div id="introductiontwo"><h3>Selected Works</h3></div>
+            <div id="introductiontwo"><h3>Click To Watch!</h3></div>
+            <div id="ttvideowrap"><a href="https://drive.google.com/file/d/1uyyHz5XFWVrxnsZwu3wZt3_c6OCYqOIZ/view?usp=sharing" target="_blank"><img src="img/ttpainting.jpg" alt="ttpainting"></a></div>
+            <div id="ttvideowrap"><a href="https://drive.google.com/file/d/1CPrq2yT-WUMW02RYxfRNJ7p3WVrQoMCd/view?usp=sharing" target="_blank"><img src="img/statecelly.JPG" alt="tennishype"></a></div>
         </div>
 
         <div id="footer">
