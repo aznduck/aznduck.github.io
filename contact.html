@@ -125,10 +125,26 @@
             50% { border-color: white; }
             }
 
+            @keyframes gradient {
+                0% {
+                    background-position: 0% 50%;
+                }
+                50% {
+                    background-position: 100% 50%;
+                }
+                100% {
+                    background-position: 0% 50%;
+                }
+            }
+
             #formcontainer {
                 width: 800px;
                 margin: auto;
-                background: linear-gradient(to top, #C63D2F, #FF9B50);
+                background: linear-gradient(-45deg, #FFBB5C, #FF9B50, #E25E3E, #C63D2F);
+                background-size: 150% 150%;
+                animation: gradient 3s ease infinite;
+                backdrop-filter: blur(8px);
+                overflow:scroll;
                 padding: 20px;
                 border-radius: 15px;
                 box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -150,11 +166,13 @@
             }
 
             .widerinput {
-                width: 550px;
+                width: 542px;
                 height: 40px;
                 border: none;
-                padding: 5px;
+                padding: 8px;
                 border-radius: 100px;
+                font-family: 'Poppins';
+                box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
             }
 
             textarea {
@@ -163,6 +181,8 @@
                 border: none;
                 border-radius: 10px;
                 resize: none;
+                font-family: 'Poppins';
+                box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
             }
 
             button {
@@ -209,34 +229,36 @@
             <div id="introduction">
                 <h1>I'm just a message away 💬</h1>
             </div>
-
-            <div id="formcontainer">
-                    <div class="formrow">
-                        <div class="formcol">
-                            <label for="email-id">Email</label>
+            <form action="https://formsubmit.co/dhan6663@usc.edu" method="POST">
+                <div id="formcontainer">
+                        <div class="formrow">
+                            <div class="formcol">
+                                <label for="email-id">Email</label>
+                            </div>
+                            <input class="widerinput" id="email-id" type="email" name="email" placeholder="name@example.com" required>
                         </div>
-                        <input class="widerinput" id="email-id" type="email" placeholder="name@example.com">
-                    </div>
-            
-                    <div class="formrow">
-                        <div class="formcol">
-                            <label for="subject-id">Subject</label>
+                        <input type="hidden" name="_next" value="about.html">
+                
+                        <div class="formrow">
+                            <div class="formcol">
+                                <label for="subject-id">Subject</label>
+                            </div>
+                            <input class="widerinput" id="subject-id" type="text" name="subject" placeholder="Cool Projects" required>
                         </div>
-                        <input class="widerinput" id="subject-id" type="text" placeholder="Cool Projects">
-                    </div>
-            
-            
-                    <div class="formrow">
-                        <div class="formcol">
-                            <label for="special-id">Your Message</label>
+                
+                
+                        <div class="formrow">
+                            <div class="formcol">
+                                <label for="special-id">Your Message</label>
+                            </div> 
+                            <textarea id="special-id"></textarea>
                         </div>
-                        <textarea id="special-id">
-                        </textarea>
-                    </div>
-                    
-                    <button type="submit">Send</button>
-                </form>
+                        
+                        <button type="submit">Send</button>
                 </div>
+            </form>
+                
+        </div>
 
 
         <div id="footer">
