@@ -1,121 +1,119 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-        <link rel="icon" href="img/favicon.ico" type="image/x-icon">
-        <meta charset="utf-8">        
-        <meta name="description" content="This webpage showcases David Han's portfolio which includes selected works of his media, past experiences, and unique aesthetic">
-        <title>David Han Portfolio</title>
-        <style>
-            body {
-                font-family: 'Poppins';
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+    <meta charset="utf-8">
+    <meta name="description" content="This webpage showcases David Han's portfolio which includes selected works of his media, past experiences, and unique aesthetic">
+    <title>David Han Portfolio</title>
+    <style>
+        body {
+            font-family: 'Poppins';
+            overflow: hidden;
+        }
+
+        #homepage {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            /* background-color: red; */
+        }
+        
+        .headshot img {
+            max-height: 300px;
+            width: auto;
+            background-color: #fff;
+            border: 10px ridge #C63D2F;
+            border-radius: 50%;
+            perspective: 500px;
+            transition: transform 0.2s ease-out;
+        }
+        
+        #intro {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            margin-bottom: 20px;
+            /* background-color: yellow; */
+            transform: translateY(-80px);
+        }
+
+        #icons {
+            display: flex;
+            flex-direction: row;
+            margin-top: 20px;
+            justify-content: center;
+            /* background-color: green; */
+            transform: translateY(-80px);
+        }
+
+        #icons img {
+            height: 30px;
+            width: auto;
+            margin: 20px;
+            transition: transform 0.2s ease-in;
+        }
+
+        #icons img:hover {
+            transform: scale(1.2);
+        }
+
+        #introduction {
+            color: white;
+            margin: 20px;
+            font-size: 1.2em;
+            text-shadow: white 1px 0 10px;
+        }
+
+        #headshot {
+            margin: 20px;
+        }
+
+        #videoBackground {
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            min-width: 100%;
+            min-height: 100%;
+            z-index: -1;
+        }
+
+        #homebutton {
+                margin-top: 10px;
+                margin-left: 10px;
             }
-            .headshot img {
-                max-height: 300px;
-                width: auto;
-                background-color:#fff;
-                border: 10px ridge #C63D2F;
-                border-radius: 50%;
-                perspective: 500px;
-                transition: transform 0.2s ease-out;
-            }
 
-
-
-            #intro {
-                width: 800px;
-                display: flex;
-                flex-direction: row;
-                position: fixed;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                /* background-color: yellow; */
-                align-items: center;
-            }
-
-            #icons {
-                display: flex;
-                flex-direction: row;
-                position: fixed;
-                top: 735px;
-                left: 30px;
-            }
-
-            #icons img{
-                height: 30px;
-                width: auto;
-                margin: 20px;
-                transition: transform ease-in;
-            }
-
-            #icons img:hover {
-                transform: scale(1.2, 1.2);
-            }
-
-            #currsong {
-                position: fixed;
-                top: 710px;
-                left: 1060px;
-            }
-
-            #introduction {
-                color: white;
-                margin: 20px;
-                font-size: 1.2em;
-                text-shadow: white 1px 0 10px;
-                /* background-color: red; */
-            }
-
-            #headshot {
-                margin: 20px;
-            }
-
-            #videoBackground {
-                position: fixed;
-                right: 0;
-                bottom: 0;
-                min-width: 100%;
-                min-height: 100%;
-                z-index: -1;
-            }
-
-            #homebutton {
-                position: fixed;
-                left: 40px;
-                top: 40px;
-            }
-
-            #homebutton img{
+        #homebutton img{
                 max-height: 50px;
                 width: 50px;
                 border: 10px ridge #C63D2F;
                 border-radius: 50%;
             }
 
-            #nav {
+        #nav {
                 width: 250px;
-                margin-left: auto;
-                margin-right: auto;
+                margin: 20px 290px 20px 20px;
                 display: flex;
                 justify-content: center;
-                position: fixed;
-                top: 45px;
-                left: 140px;
+                /* background-color: brown; */
             }
 
-            #nav a {
+        #nav a {
                 text-decoration: none;
                 color:white;
             }
 
-            #nav a:hover {
+        #nav a:hover {
                 color: #C63D2F;
             }
 
-            #nav ul {
+        #nav ul {
                 list-style: none;
                 margin: 0px;
                 padding: 0px;
@@ -123,81 +121,106 @@
                 flex-direction: row;
             }
 
-            #nav ul li {
-                margin: 0 20px; /* Add some margin between the navigation items */
+        #nav ul li {
+                margin: 0 20px; 
             }
 
-            #introduction h1 {
-                overflow: hidden; /* Ensures the content is not revealed until the animation */
-                border-right: .15em solid white; /* The typwriter cursor */
-                white-space: nowrap; /* Keeps the content on a single line */
-                margin: 0 auto;
-                letter-spacing: .10em; /* Adjust as needed */
-                animation: 
-                    typing 2.5s steps(30, end),
-                    blink-caret .75s step-end infinite;
+        #navbar {
+                display: flex;
+                /* background-color: pink; */
             }
 
-            @keyframes typing {
+        #introduction h1 {
+            overflow: hidden;
+            border-right: .15em solid white;
+            white-space: nowrap;
+            margin: 0 auto;
+            letter-spacing: .10em;
+            animation: 
+                typing 2.5s steps(30, end),
+                blink-caret .75s step-end infinite;
+        }
+
+        @keyframes typing {
             from { width: 0 }
             to { width: 100% }
-            }
+        }
 
-            @keyframes blink-caret {
+        @keyframes blink-caret {
             from, to { border-color: transparent }
             50% { border-color: white; }
+        }
+
+        @media screen and (max-width: 600px) {
+            #intro {
+                flex-direction: column;
             }
 
-        </style>
-    </head>
-    <body>
-        <video autoplay muted loop id="videoBackground">
-            <source src="img/Dark Background Web.mp4" type="video/mp4">
-         </video>
+            #icons {
+                flex-direction: column;
+                align-items: center;
+            }
 
-        <div id="homepage">
-            <div id="intro">
-                <div data-tilt data-tilt-max="30" data-tilt-full-page-listening class="headshot">
-                    <img src="img/square david.png" alt="David Headshot">
-                </div>
-                <div id="introduction">
-                    <h1>Hi! I'm David Han 👋</h1>
-                </div>
-            </div>
-            <div id="icons">
-                <a href="https://www.youtube.com/channel/UCv0Z6Zi4PnPXHI8pDVpe5GA" target="_blank"><img src="img/youtube (1).png" alt="youtube"></a>
-                <a href="https://linkedin.com/in/davidhanusc" target="_blank"><img src="img/linkedin (1).png" alt="linkedin"></a>
-                <a href="https://github.com/aznduck" target="_blank"><img src="img/githubwhite.png" alt="github"></a>
-                <a href="https://instagram.com/davidhan_33" target="_blank"><img src="img/instagram (1).png" alt="instagram"></a>
-            </div>
-            <div id="currsong">
-                <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/0hhNTyH6RJJGItHeSMCof3?utm_source=generator&theme=0" width="400" height="100" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-            </div>
-            <div id="homebutton">
-                <a href="index.html"><img src="img/DH__1_-removebg-preview.png" alt="homebutton"></a>
-            </div>
+            #nav ul {
+                flex-direction: column;
+            }
 
-            <div id="nav">
-                <ul>
-                    <a href="about.html"><li><p>about</p></li></a>
-                    <a href="media.html"><li><p>media</p></li></a>
-                    <a href="contact.html"><li><p>contact</p></li></a>
-                </ul>
+            #nav ul li {
+                margin: 10px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <video autoplay muted loop id="videoBackground">
+        <source src="img/Dark Background Web.mp4" type="video/mp4">
+    </video>
+
+    <div id = "navbar">
+        <div id="homebutton">
+            <a href="index.html"><img src="img/DH__1_-removebg-preview.png" alt="homebutton"></a>
+        </div>
+        <div id="nav">
+            <ul>
+                <a href="about.html"><li><p>about</p></li></a>
+                <a href="media.html"><li><p>media</p></li></a>
+                <a href="contact.html"><li><p>contact</p></li></a>
+            </ul>
+        </div>
+    </div>
+
+    <div id="homepage">
+
+        <div id="intro">
+            <div data-tilt data-tilt-max="30" data-tilt-full-page-listening class="headshot">
+                <img src="img/square david.png" alt="David Headshot">
+            </div>
+            <div id="introduction">
+                <h1>Hi! I'm David Han 👋</h1>
             </div>
         </div>
 
-        <script src="https://code.jquery.com/jquery-3.3.1.min.js" 
-        integrity="sha384-tsQFqpEReu7ZLhBV2VZlAu7zcOV+rXbYlF2cqB8txI/8aZajjp4Bqd+V6D5IgvKT" 
-        crossorigin="anonymous">
-        </script>
-        <script type="text/javascript" src="vanilla.js"></script>
-        <script type="text/javascript">
-            VanillaTilt.init(document.querySelector(".headshot"), {
-                max: 250,
-                speed: 400,
-            });
-            
-            VanillaTilt.init(document.querySelectorAll(".headshot"));
-        </script>
-    </body>
+        <div id="icons">
+            <a href="https://www.youtube.com/channel/UCv0Z6Zi4PnPXHI8pDVpe5GA" target="_blank"><img src="img/youtube (1).png" alt="youtube"></a>
+            <a href="https://linkedin.com/in/davidhanusc" target="_blank"><img src="img/linkedin (1).png" alt="linkedin"></a>
+            <a href="https://github.com/aznduck" target="_blank"><img src="img/githubwhite.png" alt="github"></a>
+            <a href="https://instagram.com/davidhan_33" target="_blank"><img src="img/instagram (1).png" alt="instagram"></a>
+        </div>
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha384-tsQFqpEReu7ZLhBV2VZlAu7zcOV+rXbYlF2cqB8txI/8aZajjp4Bqd+V6D5IgvKT"
+    crossorigin="anonymous">
+    </script>
+    <script type="text/javascript" src="vanilla.js"></script>
+    <script type="text/javascript">
+        VanillaTilt.init(document.querySelector(".headshot"), {
+            max: 250,
+            speed: 400,
+        });
+
+        VanillaTilt.init(document.querySelectorAll(".headshot"));
+    </script>
+</body>
 </html>
