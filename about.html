@@ -1,364 +1,466 @@
-<!DOCTYPE html>
 <html>
-    <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-        <link rel="icon" href="img/favicon.ico" type="image/x-icon">
-        <meta charset="utf-8">
-        <meta name="description" content="This webpage showcases David Han's portfolio which includes selected works of his media, past experiences, and unique aesthetic">
-        <title>David Han Portfolio</title>
-        <style>
-            body {
-                font-family: 'Poppins';
-            }
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon" />
+    <meta charset="utf-8" />
+    <meta
+      name="description"
+      content="This webpage showcases David Han's portfolio which includes selected works of his media, past experiences, and unique aesthetic"
+    />
+    <title>David Han Portfolio</title>
+    <style>
+      body {
+        font-family: "Poppins";
+      }
 
+      #resume {
+        width: 800px;
+        display: flex;
+        flex-direction: column;
+        margin: 20px auto; /* Centers div horizontally and adds vertical spacing */
+        color: white;
+        padding: 20px;
+        overflow-y: auto; /* Allows vertical scrolling */
+        align-items: center;
+      }
 
-            #resume {
-                width: 800px;
-                display: flex;
-                flex-direction: column;
-                margin: 20px auto; /* Centers div horizontally and adds vertical spacing */
-                color: white;
-                padding: 20px;
-                overflow-y: auto; /* Allows vertical scrolling */
-                align-items: center;
-            }
+      #icons {
+        display: flex;
+        flex-direction: row;
+      }
 
-            #icons {
-                display: flex;
-                flex-direction: row;
-            }
+      #icons img {
+        height: 30px;
+        width: auto;
+        margin: 20px;
+        transition: transform ease-in;
+      }
 
-            #icons img{
-                height: 30px;
-                width: auto;
-                margin: 20px;
-                transition: transform ease-in;
-            }
+      #icons img:hover {
+        transform: scale(1.2, 1.2);
+      }
 
-            #icons img:hover {
-                transform: scale(1.2, 1.2);
-            }
+      #videoBackground {
+        position: fixed;
+        right: 0;
+        bottom: 0;
+        min-width: 100%;
+        min-height: 100%;
+        z-index: -1;
+      }
 
+      #homebutton {
+        margin-top: 10px;
+        margin-left: 10px;
+      }
 
-            #videoBackground {
-                position: fixed;
-                right: 0;
-                bottom: 0;
-                min-width: 100%;
-                min-height: 100%;
-                z-index: -1;
-            }
+      #homebutton img {
+        max-height: 50px;
+        width: 50px;
+        border: 10px ridge #c63d2f;
+        border-radius: 50%;
+      }
 
-            #homebutton {
-                margin-top: 10px;
-                margin-left: 10px;
-            }
+      #nav {
+        width: 250px;
+        margin: 20px 290px 20px 20px;
+        display: flex;
+        justify-content: center;
+      }
 
-            #homebutton img{
-                max-height: 50px;
-                width: 50px;
-                border: 10px ridge #C63D2F;
-                border-radius: 50%;
-            }
+      #nav a {
+        text-decoration: none;
+        color: white;
+      }
 
-            #nav {
-                width: 250px;
-                margin: 20px 290px 20px 20px;
-                display: flex;
-                justify-content: center;
-            }
+      #nav a:hover {
+        color: #c63d2f;
+      }
 
-            #nav a {
-                text-decoration: none;
-                color:white;
-            }
+      #nav ul {
+        list-style: none;
+        margin: 0px;
+        padding: 0px;
+        display: flex;
+        flex-direction: row;
+      }
 
-            #nav a:hover {
-                color: #C63D2F;
-            }
+      #nav ul li {
+        margin: 0 20px; /* Add some margin between the navigation items */
+      }
 
-            #nav ul {
-                list-style: none;
-                margin: 0px;
-                padding: 0px;
-                display: flex;
-                flex-direction: row;
-            }
+      #navbar {
+        display: flex;
+        /* background-color: blue; */
+      }
 
-            #nav ul li {
-                margin: 0 20px; /* Add some margin between the navigation items */
-            }
+      #footer {
+        /* background-color: green; */
+      }
 
-            #navbar {
-                display: flex;
-                /* background-color: blue; */
-            }
+      #introduction h2 {
+        transform: translateY(-40px);
+      }
 
-            #footer {
-                /* background-color: green; */
-            }
+      #introduction {
+        color: white;
+        margin: 20px;
+        font-size: 1.2em;
+        text-shadow: white 1px 0 10px;
+        text-align: center;
+        margin: 20px auto; /* Center horizontally and add top and bottom margin */
+        /* background-color: red; */
+      }
 
-            #introduction h2 {
-                transform: translateY(-40px);
-            }
+      #introduction h1 {
+        overflow: hidden; /* Ensures the content is not revealed until the animation */
+        border-right: 0.15em solid white; /* The typwriter cursor */
+        white-space: nowrap; /* Keeps the content on a single line */
+        margin: 0 auto;
+        letter-spacing: 0.1em; /* Adjust as needed */
+        animation: typing 2.5s steps(24, end),
+          blink-caret 0.75s step-end infinite alternate;
+        width: 100%;
+        max-width: 1400px;
+      }
 
-            #introduction {
-                color: white;
-                margin: 20px;
-                font-size: 1.2em;
-                text-shadow: white 1px 0 10px;
-                width: 640px;
-                text-align: center;
-                margin: 20px auto; /* Center horizontally and add top and bottom margin */
-                /* background-color: red; */
-            }
+      @keyframes typing {
+        from {
+          width: 0;
+        }
+        to {
+          width: 100%;
+        }
+      }
 
-            #introduction h1 {
-                overflow: hidden; /* Ensures the content is not revealed until the animation */
-                border-right: .15em solid white; /* The typwriter cursor */
-                white-space: nowrap; /* Keeps the content on a single line */
-                margin: 0 auto;
-                letter-spacing: .10em; /* Adjust as needed */
-                animation: 
-                    typing 2.5s steps(24, end),
-                    blink-caret .75s step-end infinite alternate;
-            }
+      @keyframes blink-caret {
+        from,
+        to {
+          border-color: transparent;
+        }
+        50% {
+          border-color: white;
+        }
+      }
 
-            @keyframes typing {
-            from { width: 0 }
-            to { width: 100% }
-            }
+      #aboutpage {
+        width: 1200px;
+        display: flex;
+        flex-direction: column;
+        margin: 10px auto;
+        /* background-color: yellow; */
+      }
 
-            @keyframes blink-caret {
-            from, to { border-color: transparent }
-            50% { border-color: white; }
-            }
+      .card-carousel {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        /* background-color: red; */
+        color: white;
+        text-align: center;
+      }
 
-            #aboutpage {
-                width: 1200px;
-                display: flex;
-                flex-direction: column;
-                margin: 10px auto;
-                /* background-color: yellow; */
-            }
+      .card-carousel .my-card {
+        height: 35rem;
+        width: 1000px;
+        position: relative;
+        z-index: 1;
+        border-radius: 20px;
+        -webkit-transform: scale(0.6) translateY(-2rem);
+        transform: scale(0.6) translateY(-2rem);
+        opacity: 0;
+        cursor: pointer;
+        pointer-events: none;
+        background: #e25e3e;
+        background: linear-gradient(to top, #c63d2f, #ff9b50);
+        transition: 1s;
+      }
 
-            .card-carousel {
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                position: relative;
-                /* background-color: red; */
-                color: white;
-                text-align: center;
-            }
+      .card-carousel .my-card:after {
+        content: "";
+        position: absolute;
+        height: 2px;
+        width: 100%;
+        border-radius: 100%;
+        background-color: rgba(0, 0, 0, 0.3);
+        bottom: -5rem;
+        -webkit-filter: blur(4px);
+        filter: blur(4px);
+      }
 
-            .card-carousel .my-card {
-            height: 35rem;
-            width: 1000px;
-            position: relative;
-            z-index: 1;
-            border-radius: 20px;
-            -webkit-transform: scale(0.6) translateY(-2rem);
-            transform: scale(0.6) translateY(-2rem);
-            opacity: 0;
-            cursor: pointer;
-            pointer-events: none;
-            background: #E25E3E;
-            background: linear-gradient(to top, #C63D2F, #FF9B50);
-            transition: 1s;
-            }
+      .card-carousel .my-card.active {
+        z-index: 3;
+        -webkit-transform: scale(1) translateY(0) translateX(0);
+        transform: scale(1) translateY(0) translateX(0);
+        opacity: 1;
+        pointer-events: auto;
+        transition: 1s;
+      }
 
-            .card-carousel .my-card:after {
-            content: '';
-            position: absolute;
-            height: 2px;
-            width: 100%;
-            border-radius: 100%;
-            background-color: rgba(0,0,0,0.3);
-            bottom: -5rem;
-            -webkit-filter: blur(4px);
-            filter: blur(4px);
-            }
+      .card-carousel .my-card.prev,
+      .card-carousel .my-card.next {
+        z-index: 2;
+        -webkit-transform: scale(0.8) translateY(-1rem) translateX(0);
+        transform: scale(0.8) translateY(-1rem) translateX(0);
+        opacity: 0.5;
+        pointer-events: auto;
+        transition: 1s;
+      }
 
-            .card-carousel .my-card.active {
-            z-index: 3;
-            -webkit-transform: scale(1) translateY(0) translateX(0);
-            transform: scale(1) translateY(0) translateX(0);
-            opacity: 1;
-            pointer-events: auto;
-            transition: 1s;
-            }
+      .my-card.prev:hover,
+      .my-card.next:hover {
+        opacity: 0.8; /* Increase the opacity when hovered */
+        transition: opacity 0.3s ease;
+      }
 
-            .card-carousel .my-card.prev, .card-carousel .my-card.next {
-            z-index: 2;
-            -webkit-transform: scale(0.8) translateY(-1rem) translateX(0);
-            transform: scale(0.8) translateY(-1rem) translateX(0);
-            opacity: 0.5;
-            pointer-events: auto;
-            transition: 1s;
-            }
+      .card-carousel .my-card:nth-child(1):before {
+        content: "Revix AI";
+        position: absolute;
+        top: 80%;
+        left: 50%;
+        -webkit-transform: translateX(-50%) translateY(-50%);
+        transform: translateX(-50%) translateY(-50%);
+        font-size: 3rem;
+        font-weight: 300;
+        color: #fff;
+        text-align: center;
+      }
 
-            .my-card.prev:hover, .my-card.next:hover {
-                opacity: 0.8; /* Increase the opacity when hovered */
-                transition: opacity 0.3s ease;
-            }
+      .card-carousel .my-card:nth-child(2):before {
+        content: "Alarm.Com SWE Intern";
+        position: absolute;
+        top: 80%;
+        left: 50%;
+        -webkit-transform: translateX(-50%) translateY(-50%);
+        transform: translateX(-50%) translateY(-50%);
+        font-size: 3rem;
+        font-weight: 300;
+        color: #fff;
+        text-align: center;
+      }
 
+      .card-carousel .my-card:nth-child(3):before {
+        content: "UPenn Research";
+        position: absolute;
+        top: 80%;
+        left: 50%;
+        -webkit-transform: translateX(-50%) translateY(-50%);
+        transform: translateX(-50%) translateY(-50%);
+        font-size: 3rem;
+        font-weight: 300;
+        color: #fff;
+        text-align: center;
+      }
 
-            .card-carousel .my-card:nth-child(1):before {
-            content: 'Gyu-Kaku';
-            position: absolute;
-            top: 80%;
-            left: 50%;
-            -webkit-transform: translateX(-50%) translateY(-50%);
-            transform: translateX(-50%) translateY(-50%);
-            font-size: 3rem;
-            font-weight: 300;
-            color: #fff;
-            text-align: center;
-            }
+      .my-card img {
+        width: 200px;
+        height: auto;
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        -webkit-transform: translateX(-50%) translateY(-50%);
+        transform: translateX(-50%) translateY(-50%);
+      }
 
-            .card-carousel .my-card:nth-child(2):before {
-            content: 'USC Annenberg Media';
-            position: absolute;
-            top: 80%;
-            left: 50%;
-            -webkit-transform: translateX(-50%) translateY(-50%);
-            transform: translateX(-50%) translateY(-50%);
-            font-size: 3rem;
-            font-weight: 300;
-            color: #fff;
-            text-align: center;
-            }
+      .my-card p {
+        margin: 20px;
+      }
 
-            .card-carousel .my-card:nth-child(3):before {
-            content: 'UPenn Research';
-            position: absolute;
-            top: 80%;
-            left: 50%;
-            -webkit-transform: translateX(-50%) translateY(-50%);
-            transform: translateX(-50%) translateY(-50%);
-            font-size: 3rem;
-            font-weight: 300;
-            color: #fff;
-            text-align: center;
-            }
+      #racketwrap {
+        margin: 10px auto;
+        max-width: 1000px;
+        padding: 30px;
+        background: linear-gradient(to right, #c63d2f, #ff9b50);
+        display: flex;
+        flex-wrap: wrap; /* Allow text and images to wrap if necessary */
+        justify-content: space-between; /* Space out items evenly */
+        align-items: center; /* Align items vertically */
+        border-radius: 8px;
+        gap: 20px; /* Add space between items */
+      }
 
-            .my-card img {
-                width: 200px;
-                height: auto;
-                position: absolute;
-                top: 40%;
-                left: 50%;
-                -webkit-transform: translateX(-50%) translateY(-50%);
-                transform: translateX(-50%) translateY(-50%);
-            }
+      #racketwrap p {
+        flex: 1 1 100%; /* Make the paragraph take full width */
+        margin: 0;
+        color: white;
+        font-size: 1.2em;
+        text-align: center; /* Center text */
+      }
 
-            .my-card p {
-                margin: 20px;
-            }
+      #racketwrap img {
+        max-width: 45%; /* Make images fit within the div and be responsive */
+        height: auto;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a slight shadow for depth */
+      }
+    </style>
+  </head>
+  <body>
+    <video autoplay muted loop id="videoBackground">
+      <source src="img/Dark Background Web.mp4" type="video/mp4" />
+    </video>
+    <div id="navbar">
+      <div id="homebutton">
+        <a href="index.html"
+          ><img src="img/DH__1_-removebg-preview.png" alt="homebutton"
+        /></a>
+      </div>
+      <div id="nav">
+        <ul>
+          <a href="about.html"
+            ><li><p>about</p></li></a
+          >
+          <a href="media.html"
+            ><li><p>media</p></li></a
+          >
+          <a href="contact.html"
+            ><li><p>contact</p></li></a
+          >
+        </ul>
+      </div>
+    </div>
 
-            
+    <div id="aboutpage">
+      <div id="introduction">
+        <h1>I'm a software developer 💻</h1>
+      </div>
 
-        </style>
-    </head>
-    <body>
-        <video autoplay muted loop id="videoBackground">
-            <source src="img/Dark Background Web.mp4" type="video/mp4">
-         </video>
-         <div id = "navbar">
-            <div id="homebutton">
-                <a href="index.html"><img src="img/DH__1_-removebg-preview.png" alt="homebutton"></a>
-            </div>
-            <div id="nav">
-                <ul>
-                    <a href="about.html"><li><p>about</p></li></a>
-                    <a href="media.html"><li><p>media</p></li></a>
-                    <a href="contact.html"><li><p>contact</p></li></a>
-                </ul>
-            </div>
+      <div class="card-carousel">
+        <div class="my-card">
+          <p>
+            Leveraging Meta's Llama AI model and designing sleek, responsive UI
+            interfaces for the next big studying tool!
+          </p>
+          <img src="img/Group 51.png" />
         </div>
-
-        <div id="aboutpage">
-            <div id="introduction">
-                <h1>I'm a software developer 💻</h1>
-            </div>
-
-            <div class="card-carousel">
-                <div class="my-card"><p>Ensured a positive dining experience for all customers by taking reservations, preparing orders, and managing tables!
-                    </p><img src="img/gyukaku.svg"></div>
-                <div class="my-card"><p>Design the User Interface for the USC Anneberg Media website and employ Python techniques to scrape crime log data!
-                    </p><img src="img/trojan.png"></div>
-                <div class="my-card"><p>Applied Python techniques with to clean, analyze, and visualize actual Netflix data drawn from open datasets!
-                    </p><img src="img/penn.png"></div>
-            </div>
-
-            <div id="introduction"><h2>&darr;</h2></div>
-
-            <div id="resume">
-                <h1>my resume &darr;</h1>
-                <iframe src="davidhanresume_april copy.pdf" width="100%" height="500px"></iframe>
-            </div>      
+        <div class="my-card">
+          <p>
+            Led the development of a scheduling feature for home automation
+            "scenes", utilizing Ember and C# in an Agile environment
+          </p>
+          <img src="img/alarmlogo.png" />
         </div>
-
-        <div id="footer">
-            <div id="icons">
-                <a href="https://www.youtube.com/channel/UCv0Z6Zi4PnPXHI8pDVpe5GA" target="_blank"><img src="img/youtube (1).png" alt="youtube"></a>
-                <a href="https://linkedin.com/in/davidhanusc" target="_blank"><img src="img/linkedin (1).png" alt="linkedin"></a>
-                <a href="https://github.com/aznduck" target="_blank"><img src="img/githubwhite.png" alt="github"></a>
-                <a href="https://instagram.com/davidhan_33" target="_blank"><img src="img/instagram (1).png" alt="instagram"></a>
-            </div>
+        <div class="my-card">
+          <p>
+            Applied Python techniques with to clean, analyze, and visualize
+            actual Netflix data drawn from open datasets!
+          </p>
+          <img src="img/penn.png" />
         </div>
-          
-        <script src="https://code.jquery.com/jquery-3.3.1.min.js" 
-        integrity="sha384-tsQFqpEReu7ZLhBV2VZlAu7zcOV+rXbYlF2cqB8txI/8aZajjp4Bqd+V6D5IgvKT" 
-        crossorigin="anonymous">
-        </script>   
+      </div>
 
-        <script> 
-                $num = $('.my-card').length;
-                $even = $num / 2;
-                $odd = ($num + 1) / 2;
+      <div id="introduction"><h2>&darr;</h2></div>
 
-                if ($num % 2 == 0) {
-                $('.my-card:nth-child(' + $even + ')').addClass('active');
-                $('.my-card:nth-child(' + $even + ')').prev().addClass('prev');
-                $('.my-card:nth-child(' + $even + ')').next().addClass('next');
-                } else {
-                $('.my-card:nth-child(' + $odd + ')').addClass('active');
-                $('.my-card:nth-child(' + $odd + ')').prev().addClass('prev');
-                $('.my-card:nth-child(' + $odd + ')').next().addClass('next');
-                }
+      <div id="introduction">
+        <h1>I'm a racket sport enthusiast 🎾</h1>
+      </div>
 
-                $('.my-card').click(function() {
-                $slide = $('.active').width();
-                console.log($('.active').position().left);
-                
-                if ($(this).hasClass('next')) {
-                    $('.card-carousel').stop(false, true).animate({left: '-=' + $slide});
-                } else if ($(this).hasClass('prev')) {
-                    $('.card-carousel').stop(false, true).animate({left: '+=' + $slide});
-                }
-                
-                $(this).removeClass('prev next');
-                $(this).siblings().removeClass('prev active next');
-                
-                $(this).addClass('active');
-                $(this).prev().addClass('prev');
-                $(this).next().addClass('next');
-                });
+      <div id="racketwrap">
+        <p>
+          Whether it's tennis, pickleball, ping pong, or badminton, I'm always
+          loved battling it out on the court! Right now, I'm currently competing
+          with the USC Club Tennis Team and enjoy spamming dinks in pickleball!
+        </p>
+        <img src="img/akkianddavid.jpeg" />
+        <img src="img/IMG_3958.jpg" />
+      </div>
 
+      <div id="resume">
+        <h1>my resume &darr;</h1>
+        <iframe
+          src="augresumeforportfolio.pdf"
+          width="100%"
+          height="1100px"
+        ></iframe>
+      </div>
+    </div>
 
-                // Keyboard nav
-                $('html body').keydown(function(e) {
-                if (e.keyCode == 37) { // left
-                    $('.active').prev().trigger('click');
-                }
-                else if (e.keyCode == 39) { // right
-                    $('.active').next().trigger('click');
-                }
-                });
-        </script>
-    </body>
+    <div id="footer">
+      <div id="icons">
+        <a
+          href="https://www.youtube.com/channel/UCv0Z6Zi4PnPXHI8pDVpe5GA"
+          target="_blank"
+          ><img src="img/youtube (1).png" alt="youtube"
+        /></a>
+        <a href="https://linkedin.com/in/davidhanusc" target="_blank"
+          ><img src="img/linkedin (1).png" alt="linkedin"
+        /></a>
+        <a href="https://github.com/aznduck" target="_blank"
+          ><img src="img/githubwhite.png" alt="github"
+        /></a>
+        <a href="https://instagram.com/davidhan_33" target="_blank"
+          ><img src="img/instagram (1).png" alt="instagram"
+        /></a>
+      </div>
+    </div>
+
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.min.js"
+      integrity="sha384-tsQFqpEReu7ZLhBV2VZlAu7zcOV+rXbYlF2cqB8txI/8aZajjp4Bqd+V6D5IgvKT"
+      crossorigin="anonymous"
+    ></script>
+
+    <script>
+      $num = $(".my-card").length;
+      $even = $num / 2;
+      $odd = ($num + 1) / 2;
+
+      if ($num % 2 == 0) {
+        $(".my-card:nth-child(" + $even + ")").addClass("active");
+        $(".my-card:nth-child(" + $even + ")")
+          .prev()
+          .addClass("prev");
+        $(".my-card:nth-child(" + $even + ")")
+          .next()
+          .addClass("next");
+      } else {
+        $(".my-card:nth-child(" + $odd + ")").addClass("active");
+        $(".my-card:nth-child(" + $odd + ")")
+          .prev()
+          .addClass("prev");
+        $(".my-card:nth-child(" + $odd + ")")
+          .next()
+          .addClass("next");
+      }
+
+      $(".my-card").click(function () {
+        $slide = $(".active").width();
+        console.log($(".active").position().left);
+
+        if ($(this).hasClass("next")) {
+          $(".card-carousel")
+            .stop(false, true)
+            .animate({ left: "-=" + $slide });
+        } else if ($(this).hasClass("prev")) {
+          $(".card-carousel")
+            .stop(false, true)
+            .animate({ left: "+=" + $slide });
+        }
+
+        $(this).removeClass("prev next");
+        $(this).siblings().removeClass("prev active next");
+
+        $(this).addClass("active");
+        $(this).prev().addClass("prev");
+        $(this).next().addClass("next");
+      });
+
+      // Keyboard nav
+      $("html body").keydown(function (e) {
+        if (e.keyCode == 37) {
+          // left
+          $(".active").prev().trigger("click");
+        } else if (e.keyCode == 39) {
+          // right
+          $(".active").next().trigger("click");
+        }
+      });
+    </script>
+  </body>
 </html>
