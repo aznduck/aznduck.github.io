@@ -294,10 +294,11 @@
       }
 
       #racketwrap img {
-        max-width: 45%; /* Make images fit within the div and be responsive */
-        height: auto;
+        width: 45%; /* Set both images to 45% of the container's width */
+        height: 250px; /* Fix the height to ensure both images are horizontally aligned */
+        object-fit: cover; /* Ensures the images fill the space without distorting */
         border-radius: 8px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a slight shadow for depth */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
       }
     </style>
   </head>
@@ -355,8 +356,6 @@
         </div>
       </div>
 
-      <div id="introduction"><h2>&darr;</h2></div>
-
       <div id="introduction">
         <h1>I'm a racket sport enthusiast 🎾</h1>
       </div>
@@ -369,6 +368,20 @@
         </p>
         <img src="img/akkianddavid.jpeg" />
         <img src="img/IMG_3958.jpg" />
+      </div>
+
+      <div id="introduction">
+        <h1>I'm a musician 🎵</h1>
+      </div>
+
+      <div id="racketwrap">
+        <p>
+          I've been playing piano since the age of 5 and have continued to
+          spread the joy of music to those around me! You'll also find me
+          moshing at various rap concerts...
+        </p>
+        <img src="img/IMG_0007.JPG" />
+        <img src="img/IMG_3204.JPG" />
       </div>
 
       <div id="resume">
