@@ -35,10 +35,12 @@
         max-height: 300px;
         width: auto;
         background-color: #fff;
-        border: 10px ridge #c63d2f;
+        border: 10px solid #c63d2f;
         border-radius: 50%;
         perspective: 500px;
         transition: transform 0.2s ease-out;
+        box-shadow: 0 0 5px #c63d2f, 0 0 10px #c63d2f,
+          0 0 15px rgba(198, 61, 47, 0.8), 0 0 20px rgba(198, 61, 47, 0.6);
       }
 
       #intro {
@@ -76,10 +78,6 @@
         font-size: 1.2em;
         text-shadow: white 1px 0 10px;
         /* background-color: red; */
-      }
-
-      #headshot {
-        margin: 20px;
       }
 
       #particles-js {

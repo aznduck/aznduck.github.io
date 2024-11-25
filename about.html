@@ -273,7 +273,7 @@
       }
 
       #racketwrap {
-        margin: 10px auto;
+        margin: 15px auto;
         max-width: 1000px;
         padding: 30px;
         background: linear-gradient(to right, #c63d2f, #ff9b50);
@@ -300,12 +300,55 @@
         border-radius: 8px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
       }
+
+      #spotifywrap {
+        margin-top: 50px;
+      }
+
+      #resume a {
+        display: inline-block;
+        padding: 12px 30px;
+        background: linear-gradient(to top, #c63d2f, #ff9b50);
+        color: white;
+        text-decoration: none;
+        border-radius: 50px;
+        transition: all 0.3s ease;
+        font-size: 1rem;
+        text-transform: capitalize;
+        box-shadow: 0 4px 15px rgba(198, 61, 47, 0.3);
+      }
+
+      #resume a:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(198, 61, 47, 0.4);
+      }
+
+      #resume a:active {
+        transform: translateY(1px);
+      }
+
+      #particles-js {
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        background-color: #181818;
+      }
     </style>
   </head>
   <body>
-    <video autoplay muted loop id="videoBackground">
+    <!-- <video autoplay muted loop id="videoBackground">
       <source src="img/Dark Background Web.mp4" type="video/mp4" />
-    </video>
+    </video> -->
+    <div id="particles-js"></div>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+    <script>
+      particlesJS.load("particles-js", "assets/particles.json", function () {
+        console.log("callback - particles.js config loaded");
+      });
+    </script>
     <div id="navbar">
       <div id="homebutton">
         <a href="index.html"
@@ -384,13 +427,27 @@
         <img src="img/IMG_3204.JPG" />
       </div>
 
-      <div id="resume">
-        <h1>my resume &darr;</h1>
+      <div id="spotifywrap">
         <iframe
-          src="augresumeforportfolio.pdf"
+          style="border-radius: 8px"
+          src="https://open.spotify.com/embed/playlist/37i9dQZF1Epiviv8jD9LAS?utm_source=generator&theme=0"
           width="100%"
-          height="1100px"
+          height="352"
+          frameborder="0"
+          allowfullscreen=""
+          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+          loading="lazy"
         ></iframe>
+      </div>
+
+      <div id="resume">
+        <h1>
+          <a
+            href="https://docs.google.com/document/d/1YH0tIK9KybeB4ubwEv6mCS15FGjJ4qXh1hNxYiKKTVI/edit?usp=sharing"
+            target="_blank"
+            >my resume</a
+          >
+        </h1>
       </div>
     </div>
 
