@@ -278,11 +278,23 @@
         padding: 30px;
         background: linear-gradient(to right, #c63d2f, #ff9b50);
         display: flex;
-        flex-wrap: wrap; /* Allow text and images to wrap if necessary */
-        justify-content: space-between; /* Space out items evenly */
-        align-items: center; /* Align items vertically */
-        border-radius: 8px;
-        gap: 20px; /* Add space between items */
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        border-radius: 15px;
+        gap: 20px;
+        box-shadow: 0 10px 20px rgba(198, 61, 47, 0.2),
+          0 6px 6px rgba(255, 155, 80, 0.1), inset 0 -2px 5px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        backdrop-filter: blur(8px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      #racketwrap:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 15px 30px rgba(198, 61, 47, 0.3),
+          0 10px 10px rgba(255, 155, 80, 0.2),
+          inset 0 -2px 5px rgba(0, 0, 0, 0.2);
       }
 
       #racketwrap p {
@@ -339,9 +351,6 @@
     </style>
   </head>
   <body>
-    <!-- <video autoplay muted loop id="videoBackground">
-      <source src="img/Dark Background Web.mp4" type="video/mp4" />
-    </video> -->
     <div id="particles-js"></div>
     <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
     <script>

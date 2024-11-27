@@ -58,7 +58,7 @@
 
       #nav {
         width: 250px;
-        margin: 20px 290px 20px 20px;
+        margin: 15px 290px 15px 20px;
         display: flex;
         justify-content: center;
       }
@@ -86,7 +86,6 @@
 
       #navbar {
         display: flex;
-        /* background-color: blue; */
       }
 
       #footer {
@@ -95,28 +94,22 @@
 
       #introduction {
         color: white;
-        margin: 20px;
         font-size: 1.2em;
         text-shadow: white 1px 0 10px;
         width: 550px;
         text-align: center;
-        margin: 20px auto; /* Center horizontally and add top and bottom margin */
-        /* background-color: red; */
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 20px;
       }
       #introductiontwo {
         color: white;
-        margin: 20px;
-        font-size: 1.2em;
+        font-size: 1.4em;
         text-shadow: white 1px 0 10px;
         width: 550px;
         text-align: center;
         height: 60px;
-        margin: 5px auto; /* Center horizontally and add top and bottom margin */
-        /* background-color: red; */
-      }
-
-      #introductiontwo h2 {
-        transform: translateY(-30px);
+        margin: 20px auto; /* Center horizontally and add top and bottom margin */
       }
 
       #introduction h1 {
@@ -274,28 +267,71 @@
       }
 
       #ttvideowrap {
-        margin: 10px auto;
-        max-width: 1000px;
+        margin: 20px auto;
+        max-width: 800px;
         padding: 4px;
         background: linear-gradient(to right, #c63d2f, #ff9b50);
         display: flex;
         justify-content: center;
-        border-radius: 8px;
+        border-radius: 15px;
+        box-shadow: 0 10px 20px rgba(198, 61, 47, 0.2),
+          0 6px 6px rgba(255, 155, 80, 0.1), inset 0 -2px 5px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        backdrop-filter: blur(8px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      #ttvideowrap:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 15px 30px rgba(198, 61, 47, 0.3),
+          0 10px 10px rgba(255, 155, 80, 0.2),
+          inset 0 -2px 5px rgba(0, 0, 0, 0.2);
       }
 
       #ttvideowrap img {
         width: 100%;
         height: auto;
         display: block;
+        opacity: 0.7;
+        transition: all 0.3s ease;
+        border-radius: 12px; /* Slightly smaller than container radius */
+      }
+
+      #ttvideowrap img:hover {
+        opacity: 1;
+        transform: scale(1.01); /* Subtle grow effect */
+      }
+
+      .video-description {
+        max-width: 800px;
+        margin: 10px auto 20px;
+        text-align: center;
+        color: white;
+        font-size: 1.1em;
+        line-height: 1.6;
+        padding: 0 20px;
         opacity: 0.9;
-        transition: opacity 0.3s ease;
+      }
+
+      #particles-js {
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        background-color: #181818;
       }
     </style>
   </head>
   <body>
-    <video autoplay muted loop id="videoBackground">
-      <source src="img/Dark Background Web.mp4" type="video/mp4" />
-    </video>
+    <div id="particles-js"></div>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+    <script>
+      particlesJS.load("particles-js", "assets/particles.json", function () {
+        console.log("callback - particles.js config loaded");
+      });
+    </script>
     <div id="navbar">
       <div id="homebutton">
         <a href="index.html"
@@ -345,21 +381,49 @@
           <img src="img/decisions23.png" />
         </div>
       </div>
-      <div id="introductiontwo"><h2>&darr;</h2></div>
-      <div id="introductiontwo"><h3>Selected Works</h3></div>
-      <div id="introductiontwo"><h3>Click To Watch!</h3></div>
-      <div id="ttvideowrap">
-        <a
-          href="https://drive.google.com/file/d/1uyyHz5XFWVrxnsZwu3wZt3_c6OCYqOIZ/view?usp=sharing"
-          target="_blank"
-          ><img src="img/ttpainting.JPG" alt="ttpainting"
-        /></a>
-      </div>
+
+      <div id="introductiontwo"><h2>BVW Tennis Hype!</h2></div>
+      <p class="video-description">
+        Our coach might say we spent more time building our team's Instagram
+        than practicing (he might be right), but through it, I learned lots
+        about graphic design and filmmaking. This senior year hype reel took
+        countless hours of planning, filming, and editing with my friends and
+        led us to a state championship!
+      </p>
       <div id="ttvideowrap">
         <a
           href="https://drive.google.com/file/d/1CPrq2yT-WUMW02RYxfRNJ7p3WVrQoMCd/view?usp=sharing"
           target="_blank"
           ><img src="img/statecelly.JPG" alt="tennishype"
+        /></a>
+      </div>
+      <div id="introductiontwo"><h2>College Decision Reactions</h2></div>
+      <p class="video-description">
+        After seeing so many college decision videos during my application
+        season, I had to make one of my own... This emotional rollercoaster
+        recounts my college application process and shows some of my craziest
+        reactions. It reached ~100k views on YouTube, making it my most watched
+        video!
+      </p>
+      <div id="ttvideowrap">
+        <a
+          href="https://drive.google.com/file/d/1a5TMqgnbUzagF4zhpgCxIoHwI4COYyay/view?usp=sharing"
+          target="_blank"
+          ><img src="img/collegeDecisionThumbnail.png" alt="tennishype"
+        /></a>
+      </div>
+      <div id="introductiontwo"><h2>Theta Tau Rush</h2></div>
+      <p class="video-description">
+        As Media Chair, I curated this video to showcase the ins and outs of the
+        Theta Tau! Built on the three pillars on Social, Professional, and
+        Service, this video was displayed in person to over 250 rushees and
+        viewed by many many more online!"
+      </p>
+      <div id="ttvideowrap">
+        <a
+          href="https://drive.google.com/file/d/1uyyHz5XFWVrxnsZwu3wZt3_c6OCYqOIZ/view?usp=sharing"
+          target="_blank"
+          ><img src="img/ttpainting.JPG" alt="ttpainting"
         /></a>
       </div>
     </div>
