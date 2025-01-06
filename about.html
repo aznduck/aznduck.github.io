@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
   <head>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -7,6 +8,7 @@
       rel="stylesheet"
     />
     <link rel="icon" href="img/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="nav.css" />
     <meta charset="utf-8" />
     <meta
       name="description"
@@ -16,17 +18,6 @@
     <style>
       body {
         font-family: "Poppins";
-      }
-
-      #resume {
-        width: 800px;
-        display: flex;
-        flex-direction: column;
-        margin: 20px auto; /* Centers div horizontally and adds vertical spacing */
-        color: white;
-        padding: 20px;
-        overflow-y: auto; /* Allows vertical scrolling */
-        align-items: center;
       }
 
       #icons {
@@ -54,60 +45,14 @@
         z-index: -1;
       }
 
-
-      #homebutton img {
-        max-height: 50px;
-        width: 50px;
-      }
-
-      #nav {
-        width: 250px;
-        margin: 20px 290px 20px 20px;
-        display: flex;
-        justify-content: center;
-      }
-
-      #nav a {
-        text-decoration: none;
-        color: white;
-      }
-
-      #nav a:hover {
-        color: #c63d2f;
-      }
-
-      #nav ul {
-        list-style: none;
-        margin: 0px;
-        padding: 0px;
-        display: flex;
-        flex-direction: row;
-      }
-
-      #nav ul li {
-        margin: 0 20px; /* Add some margin between the navigation items */
-      }
-
-      #navbar {
-        display: flex;
-        align-items: center;
-        padding-left: 10px;
-        /* background-color: blue; */
-      }
-
       #footer {
         /* background-color: green; */
-      }
-
-      #introduction h2 {
-        transform: translateY(-40px);
       }
 
       #introduction {
         color: white;
         margin: 20px;
         font-size: 1.2em;
-        text-shadow: white 1px 0 10px;
         text-align: center;
         margin: 20px auto; /* Center horizontally and add top and bottom margin */
         /* background-color: red; */
@@ -123,6 +68,14 @@
           blink-caret 0.75s step-end infinite alternate;
         width: 100%;
         max-width: 1400px;
+      }
+      #introductiontwo {
+        color: white;
+        font-size: 1.4em;
+        width: 550px;
+        text-align: center;
+        height: 60px;
+        margin: 20px auto; /* Center horizontally and add top and bottom margin */
       }
 
       @keyframes typing {
@@ -144,12 +97,12 @@
         }
       }
 
-      #aboutpage {
+      #mediapage {
         width: 1200px;
         display: flex;
         flex-direction: column;
         margin: 10px auto;
-        /* background-color: yellow; */
+        /* background-color: green; */
       }
 
       .card-carousel {
@@ -174,7 +127,7 @@
         cursor: pointer;
         pointer-events: none;
         background: #e25e3e;
-        background: linear-gradient(to top, #c63d2f, #ff9b50);
+        background: linear-gradient(to top, #f0c417, #ff9b50);
         transition: 1s;
       }
 
@@ -216,7 +169,7 @@
       }
 
       .card-carousel .my-card:nth-child(1):before {
-        content: "Revix AI";
+        content: "Tennis";
         position: absolute;
         top: 80%;
         left: 50%;
@@ -229,7 +182,7 @@
       }
 
       .card-carousel .my-card:nth-child(2):before {
-        content: "Alarm.Com SWE Intern";
+        content: "Theta Tau";
         position: absolute;
         top: 80%;
         left: 50%;
@@ -242,7 +195,7 @@
       }
 
       .card-carousel .my-card:nth-child(3):before {
-        content: "UPenn Research";
+        content: "YouTube";
         position: absolute;
         top: 80%;
         left: 50%;
@@ -268,11 +221,58 @@
         margin: 20px;
       }
 
+      #ttvideowrap {
+        margin: 20px auto;
+        max-width: 800px;
+        padding: 4px;
+        background: linear-gradient(to right, #f0c417, #ff9b50);
+        display: flex;
+        justify-content: center;
+        border-radius: 15px;
+        box-shadow: 0 10px 20px rgba(198, 61, 47, 0.2),
+          0 6px 6px rgba(255, 155, 80, 0.1), inset 0 -2px 5px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        backdrop-filter: blur(8px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      #ttvideowrap:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 15px 30px rgba(198, 61, 47, 0.3),
+          0 10px 10px rgba(255, 155, 80, 0.2),
+          inset 0 -2px 5px rgba(0, 0, 0, 0.2);
+      }
+
+      #ttvideowrap img {
+        width: 100%;
+        height: auto;
+        display: block;
+        opacity: 0.7;
+        transition: all 0.3s ease;
+        border-radius: 12px; /* Slightly smaller than container radius */
+      }
+
+      #ttvideowrap img:hover {
+        opacity: 1;
+        transform: scale(1.01); /* Subtle grow effect */
+      }
+
+      .video-description {
+        max-width: 800px;
+        margin: 10px auto 20px;
+        text-align: center;
+        color: white;
+        font-size: 1.1em;
+        line-height: 1.6;
+        padding: 0 20px;
+        opacity: 0.9;
+      }
+
       #racketwrap {
         margin: 15px auto;
         max-width: 1000px;
         padding: 30px;
-        background: linear-gradient(to right, #c63d2f, #ff9b50);
+        background: linear-gradient(to right, #f0c417, #ff9b50);
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
@@ -313,28 +313,6 @@
         margin-top: 50px;
       }
 
-      #resume a {
-        display: inline-block;
-        padding: 12px 30px;
-        background: linear-gradient(to top, #c63d2f, #ff9b50);
-        color: white;
-        text-decoration: none;
-        border-radius: 50px;
-        transition: all 0.3s ease;
-        font-size: 1rem;
-        text-transform: capitalize;
-        box-shadow: 0 4px 15px rgba(198, 61, 47, 0.3);
-      }
-
-      #resume a:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 6px 20px rgba(198, 61, 47, 0.4);
-      }
-
-      #resume a:active {
-        transform: translateY(1px);
-      }
-
       #particles-js {
         position: fixed;
         width: 100%;
@@ -362,45 +340,45 @@
       </div>
       <div id="nav">
         <ul>
-          <a href="about.html"
-            ><li><p>about</p></li></a
-          >
-          <a href="media.html"
-            ><li><p>media</p></li></a
-          >
-          <a href="contact.html"
-            ><li><p>contact</p></li></a
-          >
+          <a href="work.html" class="nav-link">
+            <li><p>work</p></li>
+          </a>
+          <a href="about.html" class="nav-link">
+            <li><p>about</p></li>
+          </a>
+          <a href="contact.html" class="nav-link">
+            <li><p>contact</p></li>
+          </a>
         </ul>
       </div>
     </div>
 
-    <div id="aboutpage">
+    <div id="mediapage">
       <div id="introduction">
-        <h1>I'm a software developer 💻</h1>
+        <h1>I'm a content creator 🎥</h1>
       </div>
 
       <div class="card-carousel">
         <div class="my-card">
           <p>
-            Leveraging Meta's Llama AI model and designing sleek, responsive UI
-            interfaces for the next big studying tool!
+            Design gameday graphics and direct/edit hype reels for the BVW
+            tennis team!
           </p>
-          <img src="img/Group 51.png" />
+          <img src="img/aotpost.png" />
         </div>
         <div class="my-card">
           <p>
-            Led the development of a scheduling feature for home automation
-            "scenes", utilizing Ember and C# in an Agile environment
+            Consistently renovate the USC Theta Tau website and curate
+            graphics/videos for our social media!
           </p>
-          <img src="img/alarmlogo.png" />
+          <img src="img/tt.png" />
         </div>
         <div class="my-card">
           <p>
-            Applied Python techniques with to clean, analyze, and visualize
-            actual Netflix data drawn from open datasets!
+            Put out gaming (Fortnite, Overwatch) montages and other content such
+            as a college decision video!
           </p>
-          <img src="img/penn.png" />
+          <img src="img/decisions23.png" />
         </div>
       </div>
 
@@ -445,14 +423,49 @@
         ></iframe>
       </div>
 
-      <div id="resume">
-        <h1>
-          <a
-            href="https://docs.google.com/document/d/1YH0tIK9KybeB4ubwEv6mCS15FGjJ4qXh1hNxYiKKTVI/edit?usp=sharing"
-            target="_blank"
-            >my resume</a
-          >
-        </h1>
+      <div id="introductiontwo"><h2>BVW Tennis Hype!</h2></div>
+      <p class="video-description">
+        Our coach might say we spent more time building our team's Instagram
+        than practicing (he might be right), but through it, I learned lots
+        about graphic design and filmmaking. This senior year hype reel took
+        countless hours of planning, filming, and editing with my friends and
+        led us to a state championship!
+      </p>
+      <div id="ttvideowrap">
+        <a
+          href="https://drive.google.com/file/d/1CPrq2yT-WUMW02RYxfRNJ7p3WVrQoMCd/view?usp=sharing"
+          target="_blank"
+          ><img src="img/statecelly.JPG" alt="tennishype"
+        /></a>
+      </div>
+      <div id="introductiontwo"><h2>College Decision Reactions</h2></div>
+      <p class="video-description">
+        After seeing so many college decision videos during my application
+        season, I had to make one of my own... This emotional rollercoaster
+        recounts my college application process and shows some of my craziest
+        reactions. It reached ~100k views on YouTube, making it my most watched
+        video!
+      </p>
+      <div id="ttvideowrap">
+        <a
+          href="https://drive.google.com/file/d/1a5TMqgnbUzagF4zhpgCxIoHwI4COYyay/view?usp=sharing"
+          target="_blank"
+          ><img src="img/collegeDecisionThumbnail.png" alt="tennishype"
+        /></a>
+      </div>
+      <div id="introductiontwo"><h2>Theta Tau Rush</h2></div>
+      <p class="video-description">
+        As Media Chair, I curated this video to showcase the ins and outs of the
+        Theta Tau! Built on the three pillars on Social, Professional, and
+        Service, this video was displayed in person to over 250 rushees and
+        viewed by many many more online!"
+      </p>
+      <div id="ttvideowrap">
+        <a
+          href="https://drive.google.com/file/d/1uyyHz5XFWVrxnsZwu3wZt3_c6OCYqOIZ/view?usp=sharing"
+          target="_blank"
+          ><img src="img/ttpainting.JPG" alt="ttpainting"
+        /></a>
       </div>
     </div>
 
@@ -461,16 +474,16 @@
         <a
           href="https://www.youtube.com/channel/UCv0Z6Zi4PnPXHI8pDVpe5GA"
           target="_blank"
-          ><img src="img/youtube (1).png" alt="youtube"
+          ><img src="img/blackyoutubelogo.png" alt="youtube"
         /></a>
         <a href="https://linkedin.com/in/davidhanusc" target="_blank"
-          ><img src="img/linkedin (1).png" alt="linkedin"
+          ><img src="img/blacklinkedinlogo.png" alt="linkedin"
         /></a>
         <a href="https://github.com/aznduck" target="_blank"
           ><img src="img/githubwhite.png" alt="github"
         /></a>
         <a href="https://instagram.com/davidhan_33" target="_blank"
-          ><img src="img/instagram (1).png" alt="instagram"
+          ><img src="img/blackinstalogo.png" alt="instagram"
         /></a>
       </div>
     </div>
@@ -480,6 +493,19 @@
       integrity="sha384-tsQFqpEReu7ZLhBV2VZlAu7zcOV+rXbYlF2cqB8txI/8aZajjp4Bqd+V6D5IgvKT"
       crossorigin="anonymous"
     ></script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const currentPage = window.location.pathname.split("/").pop();
+        const links = document.querySelectorAll(".nav-link");
+
+        links.forEach((link) => {
+          if (link.getAttribute("href") === currentPage) {
+            link.classList.add("active");
+          }
+        });
+      });
+    </script>
 
     <script>
       $num = $(".my-card").length;

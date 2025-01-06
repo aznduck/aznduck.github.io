@@ -8,6 +8,7 @@
       rel="stylesheet"
     />
     <link rel="icon" href="img/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="nav.css" />
     <meta charset="utf-8" />
     <meta
       name="description"
@@ -35,21 +36,10 @@
         max-height: 300px;
         width: auto;
         background-color: #fff;
-        border: 10px solid #c63d2f;
+        border: 0px solid black;
         border-radius: 50%;
         perspective: 500px;
         transition: transform 0.2s ease-out;
-        box-shadow: 0 0 5px #c63d2f, 0 0 10px #c63d2f,
-          0 0 15px rgba(198, 61, 47, 0.8), 0 0 20px rgba(198, 61, 47, 0.6);
-      }
-
-      #intro {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        margin-bottom: 20px;
-        /* background-color: yellow; */
-        transform: translateY(-80px);
       }
 
       #icons {
@@ -72,14 +62,6 @@
         transform: scale(1.2);
       }
 
-      #introduction {
-        color: white;
-        margin: 20px;
-        font-size: 1.2em;
-        text-shadow: white 1px 0 10px;
-        /* background-color: red; */
-      }
-
       #particles-js {
         position: absolute;
         width: 100%;
@@ -90,44 +72,20 @@
         background-color: #181818;
       }
 
-      #homebutton img {
-        max-height: 50px;
-        width: 50px;
-      }
-
-      #nav {
-        width: 250px;
-        margin: 20px 290px 20px 20px;
-        display: flex;
-        justify-content: center;
-      }
-
-      #nav a {
-        text-decoration: none;
-        color: white;
-      }
-
-      #nav a:hover {
-        color: #c63d2f;
-      }
-
-      #nav ul {
-        list-style: none;
-        margin: 0px;
-        padding: 0px;
+      #intro {
         display: flex;
         flex-direction: row;
-      }
-
-      #nav ul li {
-        margin: 0 20px;
-      }
-
-      #navbar {
-        display: flex;
         align-items: center;
-        padding-left: 10px;
-        z-index: 2;
+        gap: 20px;
+        margin-bottom: 20px;
+        /* background-color: yellow; */
+        transform: translateY(-80px);
+      }
+
+      #introduction {
+        color: white;
+        margin: 20px;
+        font-size: 1em;
       }
 
       #introduction h1 {
@@ -136,8 +94,21 @@
         white-space: nowrap;
         margin: 0 auto;
         letter-spacing: 0.1em;
-        animation: typing 2.5s steps(30, end),
-          blink-caret 0.75s step-end infinite;
+        animation: typing 2s steps(30, end), blink-caret 0.75s step-end infinite;
+      }
+
+      #introduction p {
+        margin-top: 15px;
+        line-height: 1.5;
+        opacity: 0;
+        animation: fadeIn 1s ease-in forwards;
+        animation-delay: 2s; /* Start after typing animation */
+        max-width: 400px;
+      }
+
+      #name {
+        color: #f0c417;
+        font-weight: bold;
       }
 
       @keyframes typing {
@@ -156,6 +127,17 @@
         }
         50% {
           border-color: white;
+        }
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
         }
       }
 
@@ -196,15 +178,15 @@
       </div>
       <div id="nav">
         <ul>
-          <a href="about.html"
-            ><li><p>about</p></li></a
-          >
-          <a href="media.html"
-            ><li><p>media</p></li></a
-          >
-          <a href="contact.html"
-            ><li><p>contact</p></li></a
-          >
+          <a href="work.html" class="nav-link">
+            <li><p>work</p></li>
+          </a>
+          <a href="about.html" class="nav-link">
+            <li><p>about</p></li>
+          </a>
+          <a href="contact.html" class="nav-link">
+            <li><p>contact</p></li>
+          </a>
         </ul>
       </div>
     </div>
@@ -220,7 +202,13 @@
           <img src="img/square david.png" alt="David Headshot" />
         </div>
         <div id="introduction">
-          <h1>Hi! I'm David Han 👋</h1>
+          <h1>Hi! I'm <span id="name">David Han </span>👋</h1>
+          <p>
+            I'm a Computer Science student at USC with a passion for
+            <span id="name">building</span>
+            innovative solutions. When I'm not coding, you'll find me making
+            music 🎵 playing any racket sport 🎾 and bringing ideas to life 💡
+          </p>
         </div>
       </div>
 
@@ -228,16 +216,16 @@
         <a
           href="https://www.youtube.com/channel/UCv0Z6Zi4PnPXHI8pDVpe5GA"
           target="_blank"
-          ><img src="img/youtube (1).png" alt="youtube"
+          ><img src="img/blackyoutubelogo.png" alt="youtube"
         /></a>
         <a href="https://linkedin.com/in/davidhanusc" target="_blank"
-          ><img src="img/linkedin (1).png" alt="linkedin"
+          ><img src="img/blacklinkedinlogo.png" alt="linkedin"
         /></a>
         <a href="https://github.com/aznduck" target="_blank"
           ><img src="img/githubwhite.png" alt="github"
         /></a>
         <a href="https://instagram.com/davidhan_33" target="_blank"
-          ><img src="img/instagram (1).png" alt="instagram"
+          ><img src="img/blackinstalogo.png" alt="instagram"
         /></a>
       </div>
     </div>

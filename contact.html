@@ -8,6 +8,7 @@
       rel="stylesheet"
     />
     <link rel="icon" href="img/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="nav.css" />
     <meta charset="utf-8" />
     <meta
       name="description"
@@ -45,46 +46,6 @@
         z-index: -1;
       }
 
-      #homebutton img {
-        max-height: 50px;
-        width: 50px;
-      }
-
-      #nav {
-        width: 250px;
-        margin: 20px 290px 20px 20px;
-        display: flex;
-        justify-content: center;
-      }
-
-      #nav a {
-        text-decoration: none;
-        color: white;
-      }
-
-      #nav a:hover {
-        color: #c63d2f;
-      }
-
-      #nav ul {
-        list-style: none;
-        margin: 0px;
-        padding: 0px;
-        display: flex;
-        flex-direction: row;
-      }
-
-      #nav ul li {
-        margin: 0 20px; /* Add some margin between the navigation items */
-      }
-
-      #navbar {
-        display: flex;
-        align-items: center;
-        padding-left: 10px;
-        /* background-color: blue; */
-      }
-
       #footer {
         /* background-color: green; */
       }
@@ -97,7 +58,7 @@
         color: white;
         margin: 20px;
         font-size: 1.2em;
-        text-shadow: white 1px 0 10px;
+
         width: 670px;
         text-align: center;
         margin: 20px auto; /* Center horizontally and add top and bottom margin */
@@ -145,12 +106,11 @@
           background-position: 0% 50%;
         }
       }
-    
 
       #formcontainer {
         width: 800px;
         margin: auto;
-        background: linear-gradient(-45deg, #ffbb5c, #ff9b50, #e25e3e, #c63d2f);
+        background: linear-gradient(-45deg, #ffbb5c, #ff9b50, #e25e3e, #f0c417);
         background-size: 150% 150%;
         animation: gradient 3s ease infinite;
         backdrop-filter: blur(8px);
@@ -158,8 +118,8 @@
         padding: 20px;
         border-radius: 15px;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        margin-top: 50px;
-        margin-bottom: 50px;
+        margin-top: 20px;
+        margin-bottom: 20px;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -219,8 +179,8 @@
       button {
         margin-top: 30px;
         margin-bottom: 30px;
-        background: linear-gradient(to right, #c63d2f, #ff9b50);
-        font-family: 'Poppins';
+        background: linear-gradient(to right, #f0c417, #ff9b50);
+        font-family: "Poppins";
         color: white;
         padding: 12px 30px;
         border: none;
@@ -240,7 +200,7 @@
 
       button:active {
         transform: scale(0.98);
-      }                                         
+      }
 
       label {
         margin-right: 10px;
@@ -273,15 +233,15 @@
       </div>
       <div id="nav">
         <ul>
-          <a href="about.html"
-            ><li><p>about</p></li></a
-          >
-          <a href="media.html"
-            ><li><p>media</p></li></a
-          >
-          <a href="contact.html"
-            ><li><p>contact</p></li></a
-          >
+          <a href="work.html" class="nav-link">
+            <li><p>work</p></li>
+          </a>
+          <a href="about.html" class="nav-link">
+            <li><p>about</p></li>
+          </a>
+          <a href="contact.html" class="nav-link">
+            <li><p>contact</p></li>
+          </a>
         </ul>
       </div>
     </div>
@@ -336,21 +296,21 @@
         </div>
       </form>
     </div>
-    
+
     <div id="icons">
       <a
         href="https://www.youtube.com/channel/UCv0Z6Zi4PnPXHI8pDVpe5GA"
         target="_blank"
-        ><img src="img/youtube (1).png" alt="youtube"
+        ><img src="img/blackyoutubelogo.png" alt="youtube"
       /></a>
       <a href="https://linkedin.com/in/davidhanusc" target="_blank"
-        ><img src="img/linkedin (1).png" alt="linkedin"
+        ><img src="img/blacklinkedinlogo.png" alt="linkedin"
       /></a>
       <a href="https://github.com/aznduck" target="_blank"
         ><img src="img/githubwhite.png" alt="github"
       /></a>
       <a href="https://instagram.com/davidhan_33" target="_blank"
-        ><img src="img/instagram (1).png" alt="instagram"
+        ><img src="img/blackinstalogo.png" alt="instagram"
       /></a>
     </div>
 
@@ -359,5 +319,18 @@
       integrity="sha384-tsQFqpEReu7ZLhBV2VZlAu7zcOV+rXbYlF2cqB8txI/8aZajjp4Bqd+V6D5IgvKT"
       crossorigin="anonymous"
     ></script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const currentPage = window.location.pathname.split("/").pop();
+        const links = document.querySelectorAll(".nav-link");
+
+        links.forEach((link) => {
+          if (link.getAttribute("href") === currentPage) {
+            link.classList.add("active");
+          }
+        });
+      });
+    </script>
   </body>
 </html>
