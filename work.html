@@ -109,123 +109,175 @@
         display: flex;
         flex-direction: column;
         margin: 10px auto;
-        /* background-color: yellow; */
+        padding: 0 20px;
       }
 
-      .card-carousel {
+      .content-card {
+        display: flex;
+        align-items: center;
+        background-color: rgba(24, 24, 24, 0.9);
+        border-radius: 15px;
+        margin: 20px 0;
+        padding: 25px;
+        transition: transform 0.3s ease;
+        position: relative;
+        z-index: 1;
+      }
+
+      .content-card::before {
+        content: "";
+        position: absolute;
+        top: -2px;
+        left: -2px;
+        right: -2px;
+        bottom: -2px;
+        background: linear-gradient(45deg, #f0c417, #ff9b50);
+        border-radius: 17px;
+        z-index: -1;
+        transition: all 0.3s ease;
+      }
+
+      @keyframes borderAnimation {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+
+      .content-card:hover {
+        transform: translateY(-3px);
+      }
+
+      .content-card:hover::before {
+        background: linear-gradient(45deg, #f0c417, #ff9b50, #f0c417, #ff9b50);
+        background-size: 300% 300%;
+        animation: borderAnimation 3s ease infinite;
+      }
+
+      .content-card .card-image {
+        width: 45%;
+        min-width: 300px;
         display: flex;
         align-items: center;
         justify-content: center;
-        position: relative;
-        /* background-color: red; */
-        color: white;
-        text-align: center;
+        margin-right: 25px;
+        padding: 10px;
       }
 
-      .card-carousel .my-card {
-        height: 35rem;
-        width: 1000px;
-        position: relative;
-        z-index: 1;
-        border-radius: 20px;
-        -webkit-transform: scale(0.6) translateY(-2rem);
-        transform: scale(0.6) translateY(-2rem);
-        opacity: 0;
-        cursor: pointer;
-        pointer-events: none;
-        background: #e25e3e;
-        background: linear-gradient(to top, #f0c417, #ff9b50);
-        transition: 1s;
-      }
-
-      .card-carousel .my-card:after {
-        content: "";
-        position: absolute;
-        height: 2px;
+      .content-card .card-image img {
         width: 100%;
-        border-radius: 100%;
-        background-color: rgba(0, 0, 0, 0.3);
-        bottom: -5rem;
-        -webkit-filter: blur(4px);
-        filter: blur(4px);
-      }
-
-      .card-carousel .my-card.active {
-        z-index: 3;
-        -webkit-transform: scale(1) translateY(0) translateX(0);
-        transform: scale(1) translateY(0) translateX(0);
-        opacity: 1;
-        pointer-events: auto;
-        transition: 1s;
-      }
-
-      .card-carousel .my-card.prev,
-      .card-carousel .my-card.next {
-        z-index: 2;
-        -webkit-transform: scale(0.8) translateY(-1rem) translateX(0);
-        transform: scale(0.8) translateY(-1rem) translateX(0);
-        opacity: 0.5;
-        pointer-events: auto;
-        transition: 1s;
-      }
-
-      .my-card.prev:hover,
-      .my-card.next:hover {
-        opacity: 0.8; /* Increase the opacity when hovered */
-        transition: opacity 0.3s ease;
-      }
-
-      .card-carousel .my-card:nth-child(1):before {
-        content: "Revix AI";
-        position: absolute;
-        top: 80%;
-        left: 50%;
-        -webkit-transform: translateX(-50%) translateY(-50%);
-        transform: translateX(-50%) translateY(-50%);
-        font-size: 3rem;
-        font-weight: 300;
-        color: #fff;
-        text-align: center;
-      }
-
-      .card-carousel .my-card:nth-child(2):before {
-        content: "Alarm.Com SWE Intern";
-        position: absolute;
-        top: 80%;
-        left: 50%;
-        -webkit-transform: translateX(-50%) translateY(-50%);
-        transform: translateX(-50%) translateY(-50%);
-        font-size: 3rem;
-        font-weight: 300;
-        color: #fff;
-        text-align: center;
-      }
-
-      .card-carousel .my-card:nth-child(3):before {
-        content: "Glance";
-        position: absolute;
-        top: 80%;
-        left: 50%;
-        -webkit-transform: translateX(-50%) translateY(-50%);
-        transform: translateX(-50%) translateY(-50%);
-        font-size: 3rem;
-        font-weight: 300;
-        color: #fff;
-        text-align: center;
-      }
-
-      .my-card img {
-        width: 200px;
         height: auto;
-        position: absolute;
-        top: 40%;
-        left: 50%;
-        -webkit-transform: translateX(-50%) translateY(-50%);
-        transform: translateX(-50%) translateY(-50%);
+        object-fit: contain;
+        border-radius: 15px;
+        transition: all 0.2s ease;
       }
 
-      .my-card p {
-        margin: 20px;
+      .content-card .card-image img:hover {
+        opacity: 0.8;
+      }
+
+      .card-content {
+        flex: 1;
+        min-width: 200px;
+        padding-right: 15px;
+        color: white;
+      }
+
+      .card-header {
+        display: flex;
+        align-items: baseline;
+        gap: 15px;
+        margin-bottom: 12px;
+      }
+
+      .card-content h2 {
+        font-size: 1.8rem;
+        margin: 0;
+        font-weight: 600;
+      }
+
+      .card-meta {
+        display: flex;
+        gap: 15px;
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 0.9em;
+      }
+
+      .card-role {
+        font-weight: 500;
+      }
+
+      .card-date {
+        font-style: italic;
+        opacity: 0.8;
+      }
+
+      #aboutpage {
+        width: 90%;
+        max-width: 1000px;
+        display: flex;
+        flex-direction: column;
+        margin: 10px auto;
+        padding: 0 15px;
+      }
+
+      /* Media query for mobile responsiveness */
+      @media (max-width: 800px) {
+        .content-card {
+          flex-direction: column;
+          padding: 20px;
+        }
+
+        .content-card .card-image {
+          width: 100%;
+          min-width: unset;
+          margin-right: 0;
+          margin-bottom: 20px;
+          padding: 0;
+        }
+
+        .card-content {
+          width: 100%;
+          padding-right: 0;
+          text-align: center;
+        }
+
+        .card-content h2 {
+          font-size: 1.5rem;
+          text-align: center;
+        }
+
+        .card-content p {
+          text-align: center;
+        }
+      }
+
+      .skills-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 15px;
+      }
+
+      .skill-badge {
+        background: rgba(240, 196, 23, 0.4);
+        color: white;
+        padding: 4px 12px;
+        border-radius: 20px;
+        font-size: 0.85em;
+        font-weight: 500;
+        border: 1px solid rgba(240, 196, 23, 0.5);
+        transition: all 0.2s ease;
+      }
+
+      .skill-badge:hover {
+        background: rgba(240, 196, 23, 0.6);
+        transform: translateY(-1px);
       }
 
       #resume a {
@@ -263,12 +315,6 @@
   </head>
   <body>
     <div id="particles-js"></div>
-    <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
-    <script>
-      particlesJS.load("particles-js", "assets/particles.json", function () {
-        console.log("callback - particles.js config loaded");
-      });
-    </script>
     <div id="navbar">
       <div id="homebutton">
         <a href="index.html"
@@ -295,26 +341,121 @@
         <h1>I'm a software developer 💻</h1>
       </div>
 
-      <div class="card-carousel">
-        <div class="my-card">
-          <p>
-            Leveraging Meta's Llama AI model and designing sleek, responsive UI
-            interfaces for the next big studying tool!
-          </p>
-          <img src="img/Group 51.png" />
+      <div class="content-card">
+        <div class="card-image">
+          <a
+            href="https://www.figma.com/proto/OuvaCZUyuwej8GS2rTaGJI/GLANCE?node-id=1169-1095&p=f&t=OL2f1yk3GVx8cEnE-1&scaling=contain&content-scaling=fixed&page-id=1169%3A477"
+            target="_blank"
+            ><img src="img/glancescreen.png" alt="Glance"
+          /></a>
         </div>
-        <div class="my-card">
+        <div class="card-content">
+          <div class="card-header">
+            <h2>Glance</h2>
+            <div class="card-meta">
+              <span class="card-role">Founder</span>
+              <span class="card-date">August 2024 - Present</span>
+            </div>
+          </div>
+          <p>
+            Founded a startup focused on automating documentation and helping
+            teams stay effortlessly aligned
+          </p>
+          <div class="skills-container">
+            <span class="skill-badge">React</span>
+            <span class="skill-badge">Express</span>
+            <span class="skill-badge">Electron</span>
+            <span class="skill-badge">MongoDB</span>
+            <span class="skill-badge">Tailwind</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="content-card">
+        <div class="card-image">
+          <a
+            href="https://paletteify-42e0e5275b30.herokuapp.com/"
+            target="_blank"
+          >
+            <img src="img/paletteifyss.png" alt="paletteify"
+          /></a>
+        </div>
+        <div class="card-content">
+          <div class="card-header">
+            <h2>Paletteify</h2>
+            <div class="card-meta">
+              <span class="card-role">Project</span>
+              <span class="card-date">December 2024 - Present</span>
+            </div>
+          </div>
+          <p>
+            Developed a full-stack web application with 100+ users that
+            transforms Spotify listening data into personalized color palettes
+          </p>
+          <div class="skills-container">
+            <span class="skill-badge">React</span>
+            <span class="skill-badge">JavaScript</span>
+            <span class="skill-badge">APIs</span>
+            <span class="skill-badge">Express.js</span>
+            <span class="skill-badge">OAuth</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="content-card">
+        <div class="card-image">
+          <a href="https://alarm.com" target="_blank"
+            ><img src="img/alarmlogo.png" alt="Alarm.com"
+          /></a>
+        </div>
+        <div class="card-content">
+          <div class="card-header">
+            <h2>Alarm.com</h2>
+            <div class="card-meta">
+              <span class="card-role">SWE Intern</span>
+              <span class="card-date">June - August 2024</span>
+            </div>
+          </div>
           <p>
             Led the development of a scheduling feature for home automation
             "scenes", utilizing Ember and C# in an Agile environment
           </p>
-          <img src="img/alarmlogo.png" />
+          <div class="skills-container">
+            <span class="skill-badge">C#</span>
+            <span class="skill-badge">.NET</span>
+            <span class="skill-badge">Ember</span>
+            <span class="skill-badge">SQL</span>
+            <span class="skill-badge">Git</span>
+            <span class="skill-badge">Linux</span>
+          </div>
         </div>
-        <div class="my-card">
+      </div>
+
+      <div class="content-card">
+        <div class="card-image">
+          <a href="https://revix.ai" target="_blank"
+            ><img src="img/revixss.png" alt="Revix AI"
+          /></a>
+        </div>
+        <div class="card-content">
+          <div class="card-header">
+            <h2>Revix AI</h2>
+            <div class="card-meta">
+              <span class="card-role">Software Engineer</span>
+              <span class="card-date">May - December 2024</span>
+            </div>
+          </div>
           <p>
-            Founded a startup focused on automating documentation and helping teams stay effortlessly aligned
+            Leveraging Meta's Llama AI model and designing sleek, responsive UI
+            interfaces for the next big studying tool!
           </p>
-          <img src="img/Group 31.png" />
+          <div class="skills-container">
+            <span class="skill-badge">React</span>
+            <span class="skill-badge">Bootstrap</span>
+            <span class="skill-badge">Figma</span>
+            <span class="skill-badge">Python</span>
+            <span class="skill-badge">OpenAI</span>
+          </div>
         </div>
       </div>
 
