@@ -106,122 +106,6 @@
         /* background-color: green; */
       }
 
-      .card-carousel {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position: relative;
-        /* background-color: red; */
-        color: white;
-        text-align: center;
-      }
-
-      .card-carousel .my-card {
-        height: 35rem;
-        width: 1000px;
-        position: relative;
-        z-index: 1;
-        border-radius: 20px;
-        -webkit-transform: scale(0.6) translateY(-2rem);
-        transform: scale(0.6) translateY(-2rem);
-        opacity: 0;
-        cursor: pointer;
-        pointer-events: none;
-        background: #e25e3e;
-        background: linear-gradient(to top, #f0c417, #ff9b50);
-        transition: 1s;
-      }
-
-      .card-carousel .my-card:after {
-        content: "";
-        position: absolute;
-        height: 2px;
-        width: 100%;
-        border-radius: 100%;
-        background-color: rgba(0, 0, 0, 0.3);
-        bottom: -5rem;
-        -webkit-filter: blur(4px);
-        filter: blur(4px);
-      }
-
-      .card-carousel .my-card.active {
-        z-index: 3;
-        -webkit-transform: scale(1) translateY(0) translateX(0);
-        transform: scale(1) translateY(0) translateX(0);
-        opacity: 1;
-        pointer-events: auto;
-        transition: 1s;
-      }
-
-      .card-carousel .my-card.prev,
-      .card-carousel .my-card.next {
-        z-index: 2;
-        -webkit-transform: scale(0.8) translateY(-1rem) translateX(0);
-        transform: scale(0.8) translateY(-1rem) translateX(0);
-        opacity: 0.5;
-        pointer-events: auto;
-        transition: 1s;
-      }
-
-      .my-card.prev:hover,
-      .my-card.next:hover {
-        opacity: 0.8; /* Increase the opacity when hovered */
-        transition: opacity 0.3s ease;
-      }
-
-      .card-carousel .my-card:nth-child(1):before {
-        content: "Tennis";
-        position: absolute;
-        top: 80%;
-        left: 50%;
-        -webkit-transform: translateX(-50%) translateY(-50%);
-        transform: translateX(-50%) translateY(-50%);
-        font-size: 3rem;
-        font-weight: 300;
-        color: #fff;
-        text-align: center;
-      }
-
-      .card-carousel .my-card:nth-child(2):before {
-        content: "Theta Tau";
-        position: absolute;
-        top: 80%;
-        left: 50%;
-        -webkit-transform: translateX(-50%) translateY(-50%);
-        transform: translateX(-50%) translateY(-50%);
-        font-size: 3rem;
-        font-weight: 300;
-        color: #fff;
-        text-align: center;
-      }
-
-      .card-carousel .my-card:nth-child(3):before {
-        content: "YouTube";
-        position: absolute;
-        top: 80%;
-        left: 50%;
-        -webkit-transform: translateX(-50%) translateY(-50%);
-        transform: translateX(-50%) translateY(-50%);
-        font-size: 3rem;
-        font-weight: 300;
-        color: #fff;
-        text-align: center;
-      }
-
-      .my-card img {
-        width: 200px;
-        height: auto;
-        position: absolute;
-        top: 40%;
-        left: 50%;
-        -webkit-transform: translateX(-50%) translateY(-50%);
-        transform: translateX(-50%) translateY(-50%);
-      }
-
-      .my-card p {
-        margin: 20px;
-      }
-
       #ttvideowrap {
         margin: 20px auto;
         max-width: 800px;
@@ -276,7 +160,7 @@
         background: linear-gradient(to right, #f0c417, #ff9b50);
         display: flex;
         flex-wrap: wrap;
-        justify-content: space-between;
+        justify-content: center;
         align-items: center;
         border-radius: 15px;
         gap: 20px;
@@ -287,27 +171,46 @@
         border: 1px solid rgba(255, 255, 255, 0.1);
       }
 
-      #racketwrap:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 15px 30px rgba(198, 61, 47, 0.3),
-          0 10px 10px rgba(255, 155, 80, 0.2),
-          inset 0 -2px 5px rgba(0, 0, 0, 0.2);
-      }
-
       #racketwrap p {
-        flex: 1 1 100%; /* Make the paragraph take full width */
-        margin: 0;
+        flex: 1 1 100%;
+        margin: 0 0 20px 0; /* Added bottom margin */
         color: white;
         font-size: 1.2em;
-        text-align: center; /* Center text */
+        text-align: center;
+      }
+
+      #racketwrap a {
+        width: calc(50% - 10px); /* Two images per row with gap consideration */
+        max-width: 450px; /* Maximum width for each image container */
+        text-decoration: none;
+        color: white;
+        font-weight: bold;
       }
 
       #racketwrap img {
-        width: 45%; /* Set both images to 45% of the container's width */
-        height: 250px; /* Fix the height to ensure both images are horizontally aligned */
-        object-fit: cover; /* Ensures the images fill the space without distorting */
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
         border-radius: 8px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      #racketwrap img:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+      }
+
+      /* Media query for mobile responsiveness */
+      @media (max-width: 768px) {
+        #racketwrap a {
+          width: 100%;
+          max-width: none;
+        }
+
+        #racketwrap img {
+          height: 200px;
+        }
       }
 
       #spotifywrap {
@@ -374,34 +277,6 @@
 
     <div id="mediapage">
       <div id="introduction">
-        <h1>I'm a content creator 🎥</h1>
-      </div>
-
-      <div class="card-carousel">
-        <div class="my-card">
-          <p>
-            Design gameday graphics and direct/edit hype reels for the BVW
-            tennis team!
-          </p>
-          <img src="img/aotpost.png" />
-        </div>
-        <div class="my-card">
-          <p>
-            Consistently renovate the USC Theta Tau website and curate
-            graphics/videos for our social media!
-          </p>
-          <img src="img/tt.png" />
-        </div>
-        <div class="my-card">
-          <p>
-            Put out gaming (Fortnite, Overwatch) montages and other content such
-            as a college decision video!
-          </p>
-          <img src="img/decisions23.png" />
-        </div>
-      </div>
-
-      <div id="introduction">
         <h1>I'm a racket sport enthusiast 🎾</h1>
       </div>
 
@@ -422,11 +297,35 @@
       <div id="racketwrap">
         <p>
           I've been playing piano since the age of 5 and have continued to
-          spread the joy of music to those around me! You'll also find me
-          moshing at various rap concerts...
+          spread the joy of music to those around me. Though I started off
+          playing in nursing homes and school concerts, I've ventured into the
+          world of content creation and grown my TikTok (<a
+            href="https://www.tiktok.com/@aznduck.piano"
+            target="_blank"
+            >@aznduck.piano</a
+          >) to over 1.5k followers and 300k+ likes! Check out some of my pieces
+          down below!
         </p>
-        <img src="img/IMG_0007.JPG" />
-        <img src="img/IMG_3204.JPG" />
+        <a
+          href="https://drive.google.com/file/d/1Jw9OmdR9FvRu60b4v48VmOtPzOk_LD5X/view?usp=sharing"
+          target="_blank"
+          ><img src="img/IMG_0007.JPG"
+        /></a>
+        <a
+          href="https://drive.google.com/file/d/14iL5VLnQJnjbxJVqQMq88ZP5wcHAAznh/view?usp=drive_link"
+          target="_blank"
+          ><img src="img/IMG_3204.JPG"
+        /></a>
+        <a
+          href="https://drive.google.com/file/d/1-M1hx7RALr9hETGTQ5QyPNlOaxpJ8gmM/view?usp=sharing"
+          target="_blank"
+          ><img src="img/djdavid.JPG"
+        /></a>
+        <a
+          href="https://drive.google.com/file/d/18oOFXyWYToXnmQ4s0EtYkhuaaF580NAS/view?usp=sharing"
+          target="_blank"
+          ><img src="img/icecream.png"
+        /></a>
       </div>
 
       <div id="spotifywrap">
@@ -523,63 +422,6 @@
             link.classList.add("active");
           }
         });
-      });
-    </script>
-
-    <script>
-      $num = $(".my-card").length;
-      $even = $num / 2;
-      $odd = ($num + 1) / 2;
-
-      if ($num % 2 == 0) {
-        $(".my-card:nth-child(" + $even + ")").addClass("active");
-        $(".my-card:nth-child(" + $even + ")")
-          .prev()
-          .addClass("prev");
-        $(".my-card:nth-child(" + $even + ")")
-          .next()
-          .addClass("next");
-      } else {
-        $(".my-card:nth-child(" + $odd + ")").addClass("active");
-        $(".my-card:nth-child(" + $odd + ")")
-          .prev()
-          .addClass("prev");
-        $(".my-card:nth-child(" + $odd + ")")
-          .next()
-          .addClass("next");
-      }
-
-      $(".my-card").click(function () {
-        $slide = $(".active").width();
-        console.log($(".active").position().left);
-
-        if ($(this).hasClass("next")) {
-          $(".card-carousel")
-            .stop(false, true)
-            .animate({ left: "-=" + $slide });
-        } else if ($(this).hasClass("prev")) {
-          $(".card-carousel")
-            .stop(false, true)
-            .animate({ left: "+=" + $slide });
-        }
-
-        $(this).removeClass("prev next");
-        $(this).siblings().removeClass("prev active next");
-
-        $(this).addClass("active");
-        $(this).prev().addClass("prev");
-        $(this).next().addClass("next");
-      });
-
-      // Keyboard nav
-      $("html body").keydown(function (e) {
-        if (e.keyCode == 37) {
-          // left
-          $(".active").prev().trigger("click");
-        } else if (e.keyCode == 39) {
-          // right
-          $(".active").next().trigger("click");
-        }
       });
     </script>
   </body>
