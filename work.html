@@ -280,6 +280,127 @@
         transform: translateY(-1px);
       }
 
+      .timeline {
+        position: relative;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 40px 20px;
+      }
+
+      /* The vertical line that connects the logos */
+      .timeline::after {
+        content: "";
+        position: absolute;
+        width: 2px;
+        background-color: #333;
+        top: 0;
+        bottom: 0;
+        left: 80px;
+      }
+
+      /* Each timeline entry */
+      .timeline-item {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 40px;
+        position: relative;
+      }
+
+      /* Logo container */
+      .timeline-logo {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 1; /* Make logo appear above the vertical line */
+      }
+
+      /* Logo image styling */
+      .timeline-logo img {
+        width: 80%;
+        height: 80%;
+        object-fit: contain;
+      }
+
+      /* Content section styling */
+      .timeline-content {
+        margin-left: 40px;
+        background: linear-gradient(45deg, #f0c417, #ff9b50, #f0c417, #ff9b50);
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        flex: 1;
+      }
+
+      /* Date styling */
+      .timeline-date {
+        font-weight: bold;
+        color: white;
+        margin-bottom: 10px;
+      }
+
+      /* Content headings */
+      .timeline-content h2 {
+        margin: 0 0 10px 0;
+        color: #333;
+      }
+
+      /* Content paragraphs */
+      .timeline-content p {
+        margin: 0;
+        line-height: 1.5;
+        color: white;
+      }
+
+      .logo-link {
+        display: block;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: transform 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      }
+
+      /* Define the bounce animation using keyframes */
+      @keyframes bounce {
+        0% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.1);
+        }
+        75% {
+          transform: scale(0.95);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
+
+      /* Apply the animation on hover */
+      .logo-link:hover {
+        animation: bounce 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      }
+
+      /* Make timeline responsive */
+      @media (max-width: 768px) {
+        .timeline::after {
+          left: 30px; /* Adjust line position for smaller screens */
+        }
+
+        .timeline-logo {
+          width: 60px;
+          height: 60px;
+        }
+
+        .timeline-content {
+          margin-left: 20px;
+        }
+      }
+
       #resume a {
         display: inline-block;
         padding: 12px 30px;
@@ -461,6 +582,69 @@
             <span class="skill-badge">Figma</span>
             <span class="skill-badge">Python</span>
             <span class="skill-badge">OpenAI</span>
+          </div>
+        </div>
+      </div>
+
+      <div id="introduction">
+        <h1>I'm a USC Trojan ✌️</h1>
+      </div>
+
+      <div class="timeline">
+        <!-- Timeline Item -->
+        <div class="timeline-item">
+          <div class="timeline-logo">
+            <a href="https://usclavalab.org/" target="_blank" class="logo-link">
+              <img src="img/lavalogo.svg" alt="Organization Logo" />
+            </a>
+          </div>
+          <div class="timeline-content">
+            <h2>LavaLab</h2>
+            <div class="timeline-date">August 2024 - Present</div>
+
+            <p>
+              Executed full product development cycle from ideation to MVP in 8
+              weeks at USC’s flagship product incubator with a PM, Dev, &
+              Designer
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-logo">
+            <a
+              href="https://viterbischool.usc.edu/"
+              target="_blank"
+              class="logo-link"
+            >
+              <img src="img/trojan.png" alt="Another Organization Logo"
+            /></a>
+          </div>
+          <div class="timeline-content">
+            <h2>USC Viterbi</h2>
+            <div class="timeline-date">August 2024 - Present</div>
+
+            <p>
+              Tutored students in CSCI 170: Discrete Methods In CS; topics
+              include graph theory, logic, asymptotic analysis, and probability
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-logo">
+            <a href="https://uscthetatau.org" target="_blank" class="logo-link">
+              <img src="img/tt.png" alt="Another Organization Logo"
+            /></a>
+          </div>
+          <div class="timeline-content">
+            <h2>Theta Tau</h2>
+            <div class="timeline-date">December 2023 - December 2024</div>
+            <p>
+              Curated custom graphics/videos for multiple media platforms and
+              maintained the organization's website with HTML/CSS to boost
+              interest rates for potential new members
+            </p>
           </div>
         </div>
       </div>
